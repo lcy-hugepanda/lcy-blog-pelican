@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'LCY'
-SITENAME = u'LCY Data Science Couple'
+SITENAME = u':-) LCY Data Science Couple'
 SITEURL = ''
 
 PATH = 'content'
@@ -30,6 +30,16 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 20
+
+# Theme
+THEME = "themes/pelican-bootstrap3"
+
+# Pics on the pages
+BANNER = 'images/LCYbanner_1500.png'
+BANNER_ALL_PAGES = True
+SITELOGO = 'images/white.png'
+HIDE_SITENAME = True
+
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
