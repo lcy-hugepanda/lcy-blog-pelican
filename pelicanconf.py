@@ -3,10 +3,11 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'LCY'
-SITENAME = u':-) LCY Data Science Couple'
+SITENAME = u''
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['theme/images', 'images']
 
 TIMEZONE = 'Europe/Paris'
 
@@ -32,7 +33,17 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 20
 
 # Theme
-THEME = "themes/pelican-bootstrap3"
+#THEME = "themes/pelican-bootstrap3"
+THEME = "themes/pelican-elegant"
+
+# About us
+LANDING_PAGE_ABOUT = dict()
+#LANDING_PAGE_ABOUT['title'] = 'Test'
+LANDING_PAGE_ABOUT['details'] = 'Test'
+
+# Plugins
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["render_math"]
 
 # Pics on the pages
 BANNER = 'images/LCYbanner_1500.png'
