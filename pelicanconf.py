@@ -43,7 +43,7 @@ LANDING_PAGE_ABOUT['details'] = 'Test'
 
 # Plugins
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["render_math"]
+PLUGINS = ["render_math", "representative_image"]
 
 # Pics on the pages
 BANNER = 'images/LCYbanner_1500.png'

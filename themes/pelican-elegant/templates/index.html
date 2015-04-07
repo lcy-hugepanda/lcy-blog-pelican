@@ -98,6 +98,9 @@
             {% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT with context %}
             {% if loop.index0 < RECENT_ARTICLES_COUNT %}
             <article>
+				{% if  article.featured_image %}
+					<img src="{{ article.featured_image }}">
+				{% endif %}
                 <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a>
                 <section>
                     posted in

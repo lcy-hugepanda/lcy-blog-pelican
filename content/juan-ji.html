@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <title>My super title</title>
+        <meta name="tags" content="thats, awesome" />
+        <meta name="date" content="2012-07-09 22:28" />
+        <meta name="modified" content="2012-07-10 20:14" />
+        <meta name="category" content="yeah" />
+        <meta name="authors" content="Alexis Métaireau, Conan Doyle" />
+        <meta name="summary" content="Short version for index and feeds" />
+		
+		<script type="text/javascript"
+			src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+    </head>
+    <body>
+		<script type="text/javascript"
+		  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+	
+        This is the content of my super blog post.
+		
+		<p>
+			<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">之前断断续续看了一些神经网络相关的内容，马上也要开始全新的阶段，以后还是不时会动动&ldquo;笔&rdquo;，不管简单还是复杂，写点儿东西。</span></span></span></span>
+		</p>
+
+		<p>
+			<span style="font-family: 'times new roman', times, serif; font-size: 16.363636016845703px;">卷积神经网络为处理网格状拓扑结构（grid-like topology）的输入数据（例如：时间序列数据，图像）而设计。</span><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">卷积是一种特殊的线性操作，</span></span></span></span><span style="font-family: 'times new roman', times, serif; font-size: 16.363636016845703px;">是卷积神经网络中的一种基本操作。</span><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">卷积神经网络使用卷积代替了普通神经网络中的矩阵乘法。这一篇首先从卷积运算开始。</span></span></span></span>
+		</p>
+
+		<hr />
+		<p>
+			<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">1. 卷积运算的定义</span>
+		</p>
+
+		<div>
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">卷积是通过两个函数生成第三个函数的一种运算，下面是卷积运算的标准定义。</span></span></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">设\(f(x)\)和\(g(x)\)是\(\mathbb{R}\)上的两个可积函数，做积分：\[\int_{-\infty}^{+\infty} f (\tau)g(x-\tau) d\tau，\]随着\(x\)取不同的值，这个积分定义了一个新的函数\(h(x)\)，称作\(f\)与\(g\)的卷积，记作：\(h(x) = (f*g)(x)\)，由卷积得到的函数\(f*g\)一般比\(f\)和\(g\)都要光滑。如果\(f(x)\)和\(g(x)\)是定义在离散域上的函数，卷积按照如下公式计算：\[(f*g)[m]=\sum_{n}f(n)g(m-n)\quad。\]这篇文章（</span><a href="https://colah.github.io/posts/2014-07-Understanding-Convolutions/"><span data-wiz-span="data-wiz-span">https://colah.github.io/posts/2014-07-Understanding-Convolutions/</span></a><span data-wiz-span="data-wiz-span">&nbsp;）</span> <span data-wiz-span="data-wiz-span">给出了一个实际的例子解释卷积运算的意义。</span></span></span>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">从高处扔一个小球令其掉落地面，小球落地点与扔小球的地点有一个位移差。在这个例子中小球只有一维运动。假设扔小球一次，小球落地后，在落地地点以某个高度再次扔小球，小球又前进一段距离。那么，小球总共前进距离\(c\)的概率是多少？</span></span></span></span>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">将这个过程分解。假设第一次扔小球之后小球以概率\(f(a)\)前进距离\(a\)，\(f\)是概率分布函数。之后，捡起小球从小球的落地点以另外高度扔小球，这次小球以概率\(g(b)\)前进距离\(b\)。由于从不同的高度扔小球，\(g(b)\)可能是另一个不同的概率分布。\(a+b=c\)，两次扔小球，小球前进了距离\(c\)的概率是：\(f(a) \cdot g(b)\)。</span></span></span>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">考虑\(a\)，\(b\)，\(c\)为离散值的一个具体例子。扔小球两次，假设希望小球前进的总距离\(c\)为3。若第一次扔小球，小球前进距离\(a=2\)，那么，为了达到要求的距离，第二次小球必须前进\(b=2\)的距离，这种情况发生的概率为：\(f(2)\cdot g(1)\)。但这并不是唯一令前进总距离为3的方式，还有可能第一次前进\(a=1\)，第二次前进\(b=1\)；或者第一次前进\(a=0\)，第二次前进\(b=3\)&hellip;&hellip;这两种情况发生的概率分别为：\(f(1)\cdot g(2)\)和\(f(0) \cdot g(3)\)。于是，小球前进距离\(c = 3\)的概率为：\[&hellip;&hellip;f(0)\cdot g(3)+f(1)\cdot g(2)+f(2)\cdot g(1)&hellip;&hellip; = \sum_{a+b=c}f(a)\cdot g(b)\quad，\]以上是就是卷及运算的过程。特别地，\(f\)和\(g\)进行卷积，在\(c\)处的取值记作：\[(f*g)(c) = \sum _{a+b=c}f(a)\cdot g(b)\quad，\]带入\(b=c-a\)，于是有：\[(f*g)(c) = \sum_{a}f(a)g(c-a)\quad，\tag{1}\label{1}\]这就是卷积运算的标准定义。卷积运算也可以很方便地扩展到高维，若\(f\)和\(g\)是定义在离散域上的二元函数，\(f*g\)得到一个二维矩阵，矩阵中的元素按照如下方式计算：\[(f*g)[i,j]= \sum _m\sum_n f(m,n)g(i-m,j-n)\quad。\tag{2}\label{2}\]在卷积神经网络术语中，\(f\)称作输入（input），\(g\)称作卷积核（kernel），而在卷及神经网络中，卷积核就是通过训练得到的训练参数。</span></span></span>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">卷积运算是可交换的，在传统离散二维卷积运算中，输入和核以相反的顺序编排索引。但是这种可交换性在卷积神经网络中并不是必须的，因此，卷积神经网络中输入和核的索引顺序一致。卷积神经网络中的卷积操作通常并非严格遵循卷积最初的数学定义，而是有许多变种，具体见参考文献[6]中的10.4节。</span></span></span></span>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">2. 图像处理中的卷积运算</span></span></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">在图像处理中，线性滤波器（liner filter）对图像的一个局部区域中的像素加权求和得到新的像素，是一种最常用的邻域操作符（neighborhood operator），对图像进行线性滤波即进行如下过程运算：\[s[i,j]= \sum_{k,j}f(i+k,i+j)g(k,l)\quad，\]其中\(f\)是输入图像，\(g\)是滤波模板，\(s\)是滤波后的图像，可以看到线性滤波的过程就是对原图像和滤波模板进行卷积运算。线性滤波器可以用于对图像进行模糊化，锐化图像细节，提取图像边缘，或是移除噪声。</span></span></span></span>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">（1）低通滤波，滤波模板：</span></span></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">\(k_1= \left[ \begin{matrix} &amp;1&amp;1&amp;1\\&amp;1&amp;1&amp;1\\&amp;1&amp;1&amp;1\end{matrix}\right]*\frac{1}{9} \)，</span></span></span></span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_2= \left[ \begin{matrix} &amp;1&amp;1&amp;1\\&amp;1&amp;1&amp;1\\&amp;1&amp;1&amp;1\end{matrix}\right]*\frac{1}{10} \)，</span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_3= \left[ \begin{matrix} &amp;1&amp;1&amp;1\\&amp;1&amp;1&amp;1\\&amp;1&amp;1&amp;1\end{matrix}\right]*\frac{1}{16} \)；</span>
+			</div>
+
+			<div>
+				<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/lowpass-filter.jpg"><img alt="lowpass filter" class="alignnone size-medium wp-image-1054" height="104" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/lowpass-filter-300x104.jpg" width="300" /></a>
+			</div>
+
+			<div>
+				<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">（2）高通滤波，滤波模板：</span>
+			</div>
+
+			<div>
+				<div>
+					<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">\(k_1= \left[ \begin{matrix} &amp;0&amp;-1&amp;0\\&amp;-1&amp;5&amp;-1\\&amp;0&amp;-1&amp;0\end{matrix}\right]\)，</span></span></span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_2= \left[ \begin{matrix} &amp;-1&amp;-1&amp;-1\\&amp;-1&amp;9&amp;-1\\&amp;-1&amp;-1&amp;-1\end{matrix}\right] \)，</span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_3= \left[ \begin{matrix} &amp;1&amp;-2&amp;1\\&amp;-2&amp;5&amp;-2\\&amp;1&amp;-2&amp;1\end{matrix}\right] \)；</span>
+				</div>
+
+				<div>
+					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/highpass-filter.jpg"><img alt="highpass filter" class="alignnone size-medium wp-image-1053" height="104" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/highpass-filter-300x104.jpg" width="300" /></a>
+				</div>
+
+				<div>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">（3）平移和差分边缘检测，滤波模板：</span>
+				</div>
+
+				<p>
+					<span style="line-height: 1.6em; font-size: 16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">\(k_1=\left[ \begin{matrix} &amp;0&amp;0&amp;0\\&amp;-1&amp;1&amp;0\\&amp;0&amp;0&amp;0\end{matrix}\right]\)，</span></span></span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_2=\left[ \begin{matrix} &amp;0&amp;-1&amp;0\\&amp;0&amp;1&amp;0\\&amp;0&amp;0&amp;0\end{matrix}\right]\)，</span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_3=\left[ \begin{matrix} &amp;-1&amp;0&amp;0\\&amp;0&amp;1&amp;0\\&amp;0&amp;0&amp;0\end{matrix}\right]\)；</span>
+				</p>
+
+				<p>
+					&nbsp;
+				</p>
+			</div>
+
+			<div>
+				<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/3.jpg"><img alt="3" class="alignnone size-medium wp-image-1055" height="104" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/3-300x104.jpg" width="300" /></a>
+			</div>
+
+			<div>
+				<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">（4）匹配滤波边缘检测，滤波模板：</span>
+			</div>
+
+			<div>
+				<span style="font-size: 16px; line-height: 1.6em;">\(k_1=\left[ \begin{matrix} &amp;-1&amp;-1&amp;-1&amp;-1\\&amp;0&amp;0&amp;0&amp;0\\&amp;1&amp;1&amp;1&amp;1\end{matrix}\right]\)，</span><span style="font-size: 16px; line-height: 1.6em;">\(k_2=\left[ \begin{matrix} &amp;-1&amp;0&amp;1\\&amp;-1&amp;0&amp;1\\&amp;-1&amp;0&amp;1\\&amp;-1&amp;0&amp;1\end{matrix}\right]\)；</span>
+			</div>
+
+			<div>
+				<div>
+					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/4.jpg"><img alt="4" class="alignnone size-medium wp-image-1056" height="128" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/4-300x128.jpg" width="300" /></a>
+				</div>
+
+				<div>
+					<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">（5）边缘检测，滤波模板：</span></span></span>
+				</div>
+
+				<div>
+					<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">\(k_1=\left[ \begin{matrix} &amp;-1&amp;0&amp;-1\\&amp;0&amp;4&amp;0\\&amp;-1&amp;0&amp;-1\end{matrix}\right]\)，</span></span></span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_2=\left[ \begin{matrix} &amp;-1&amp;-1&amp;-1\\&amp;-1&amp;8&amp;-1\\&amp;-1&amp;-1&amp;-1\end{matrix}\right]\)，</span>
+				</div>
+
+				<div>
+					<span style="line-height: 1.6em; font-size: 16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">\(k_3=\left[ \begin{matrix} &amp;-1&amp;-1&amp;-1\\&amp;-1&amp;9&amp;-1\\&amp;-1&amp;-1&amp;-1\end{matrix}\right]\)，</span></span></span><span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_4= \left[ \begin{matrix} &amp;1&amp;-1&amp;1\\&amp;-2&amp;4&amp;-2\\&amp;1&amp;-2&amp;1\end{matrix} \right]\)；</span>
+				</div>
+
+				<div>
+					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/5.jpg"><img alt="5" class="alignnone size-medium wp-image-1057" height="80" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/5-300x80.jpg" width="300" /></a>
+				</div>
+
+				<div>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">（6）梯度方向边缘检测，滤波模板：</span>
+				</div>
+
+				<div>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_1=\left[ \begin{matrix} &amp;1&amp;1&amp;1\\&amp;1&amp;-2&amp;1\\&amp;-1&amp;-1&amp;-1\end{matrix}\right]\)，\(k_2=\left[ \begin{matrix} &amp;1&amp;1&amp;1\\&amp;-1&amp;-2&amp;1\\&amp;-1&amp;-1&amp;1\end{matrix}\right]\)，</span>
+				</div>
+
+				<div>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_3=\left[ \begin{matrix} &amp;-1&amp;1&amp;1\\&amp;-1&amp;-2&amp;1\\&amp;-1&amp;1&amp;1\end{matrix}\right]\)，\(k_4= \left[ \begin{matrix} &amp;-1&amp;-1&amp;1\\&amp;-1&amp;-2&amp;1\\&amp;1&amp;1&amp;1\end{matrix} \right]\)，</span>
+				</div>
+
+				<div>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_5=\left[ \begin{matrix} &amp;-1&amp;-1&amp;-1\\&amp;1&amp;-2&amp;1\\&amp;1&amp;1&amp;1\end{matrix}\right]\)，\(k_6=\left[ \begin{matrix} &amp;1&amp;-1&amp;-1\\&amp;1&amp;-2&amp;-1\\&amp;1&amp;1&amp;1\end{matrix}\right]\)，</span>
+				</div>
+
+				<div>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">\(k_7=\left[ \begin{matrix} &amp;1&amp;1&amp;-1\\&amp;1&amp;-2&amp;-1\\&amp;1&amp;1&amp;-1\end{matrix}\right]\)，\( k_8= \left[ \begin{matrix} &amp;1&amp;1&amp;1\\&amp;1&amp;-2&amp;-1\\&amp;1&amp;-1&amp;-1\end{matrix} \right]\)；</span>
+				</div>
+
+				<p>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">下图各个子图从上到下，从左到右分别是，原图，原图与滤波模板\(k_1\)至\(k_8\)卷积的结果。</span>
+				</p>
+
+				<p>
+					&nbsp;
+				</p>
+			</div>
+
+			<div>
+				<p>
+					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/6.jpg"><img alt="6" class="alignnone size-medium wp-image-1058" height="243" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/6-300x243.jpg" width="300" /></a>
+				</p>
+
+				<p>
+					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">可以看到，卷积运算可以看作是特征提取。一个卷积模板（卷积核）就是一个特征，模板与原图像进行卷积用于提取在图像的不同位置是否出现该特征。</span>
+				</p>
+
+				<p>
+					&nbsp;
+				</p>
+			</div>
+
+			<div>
+				&nbsp;
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">参考文献：</span></span></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">[1]. Conv Nets: A Modular Perspective： </span><a href="https://colah.github.io/posts/2014-07-Conv-Nets-Modular/"><span data-wiz-span="data-wiz-span">https://colah.github.io/posts/2014-07-Conv-Nets-Modular/</span></a></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">[2].&nbsp;Understanding Convolutions： </span><a href="https://colah.github.io/posts/2014-07-Understanding-Convolutions/"><span data-wiz-span="data-wiz-span">https://colah.github.io/posts/2014-07-Understanding-Convolutions/</span></a> </span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">[3].&nbsp;Convolutional Neural Networks： </span><a href="http://andrew.gibiansky.com/blog/machine-learning/convolutional-neural-networks/"><span data-wiz-span="data-wiz-span">http://andrew.gibiansky.com/blog/machine-learning/convolutional-neural-networks/</span></a> </span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">[4].&nbsp;Feature extraction using convolution：<a href="http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution">http://deeplearning.stanford.edu/wiki/index.php/Feature_extraction_using_convolution</a></span></span></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">[5]. LeCun Y, Bottou L, Bengio Y, Haffner P. Gradient-based learning applied to document recognition. Proceedings of the IEEE, 1998, 86(11): 2278-2324</span></span></span></span>
+			</div>
+
+			<div>
+				<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">[6]. Deep Learning, Yoshua Bengio, Ian J. Goodfellow, Aron Courville:&nbsp;</span><a href="http://www.iro.umontreal.ca/~bengioy/dlbook/"><span data-wiz-span="data-wiz-span">http://www.iro.umontreal.ca/~bengioy/dlbook/</span></a></span></span>
+			</div>
+		</div>
+
+		<div>
+			<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><a href="http://www.wiz.cn/i/9aa7f471" title="来自为知笔记(Wiz)">来自为知笔记(Wiz)</a></span></span>
+		</div>
+
+    </body>
+</html>
+
