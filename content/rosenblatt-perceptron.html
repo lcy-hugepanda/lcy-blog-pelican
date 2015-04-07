@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <title>感知器算法</title>
+        <meta name="tags" content="Machine learning, Neural Network" />
+        <meta name="date" content="2013-12-29 9:42" />
+        <meta name="modified" content="2013-12-29 9:42" />
+        <meta name="category" content="Neural Network" />
+        <meta name="authors" content="LCY.Seso" />
+        <meta name="summary" content="Short version for index and feeds" />
+		
+		<script type="text/javascript"
+			src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+    </head>
+    <body>
+		<script type="text/javascript"
+		  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+		
+<div style="line-height:200%">
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">这几年学习对神经网络了解一直停留在学习机器学习课程时教科书里规规矩矩的那点知识，</span></span><span style="font-family: 'times new roman', times, serif; font-size: 16px; ">是我一直向往却没有完完整整学习过的内容。在学校这段时间是最好的学习时光，因为是学生嘛，学习就是我的职业，这次要利用这段在学校的时间，以一定的节奏（不打算太慢，但是若要学得能够用起来，速度也快不了，加上平时还有一些其他工作，我希望能尽快找到一个合理的节奏）补充上这块重要的知识。</span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">首先想把Hinton教授2012年在Coursera上开设的《Neural Network for Machine Learning》课程全部过一遍，同时也会和其它书本，论文一起学习，动手也不会落下。</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">博客其它部分也会继续。</span></span>
+	</div>
+
+	<p>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><!--more--></span></span>
+	</p>
+
+	<hr />
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">人类的大脑是一个复杂的，非线性的，高度并行化的信息处理系统。人工神经网络的灵感来自对人类大脑工作方式的模拟，人类大脑所擅长的也是人工神经网络所擅长的，比如视觉信息处理，语言信号处理，自然语言处理等。人类大脑所不擅长的也是人工神经网络不擅长的，比如精确的数学计算。</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">神经网络训练算法与神经网络结构有很大关系。常见的神经网络结构有：（1）单层前馈网络（Single-Layer Feedforward Network）（2）多层前馈网络（Multilayer Feedforward Network）（3）递归网络（Recurrent Network）</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">大脑由许多神经元结点构成，人工神经网络研究也从人工神经元的数学模型开始。图1是人工神经元模型，可以看到神经元模型由：（1）一组连接权值（2）加法器（3）激活函数三要素构成，激活函数为神经元模型引入了非线性成分。</span></span>
+	</div>
+
+	<div>
+		<p style="text-align: center; ">
+			<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><img border="0" src="http://www.lovecaoying.com/blog/wp-content/uploads/2013/12/wpid-e7e678bf0978a58e9f68c015a711dc81_jjj1.png" /></span></span>
+		</p>
+
+		<p style="text-align: center; ">
+			<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="font-size:14px;">图1 人工神经元模型</span></span></span>
+		</p>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div style="text-align: center; ">
+		<strong><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">1. 感知器模型</span></span></strong>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">感知器由Rosenblatt于1958年在论文中首次提出，是神经网络和SVM的基础。</span></span></span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">首先定义感知器的数学模型：特征</span></span><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">空间\(\mathcal{X} \subseteq \mathbb{R}^n\)，输出空间\(\mathcal{Y} =\{-1,+1\}\)。从输入空间到输出空间的函数：\( f(\boldsymbol{x}) =\text{sign}(\boldsymbol{\omega} \cdot \boldsymbol{x} +b) \)称为感知器，其中\(\boldsymbol{\omega}\)是权值向量，\(b\)是偏置，符号函数\(\text{sign}(x)= \left\{ \begin{align} &amp;+1, \quad &amp; x \geq 0 \\ &amp;-1, \quad &amp; x&lt;0\end{align} \right.\)是感知器使用的激活函数。感知器模型由权值向量\(\boldsymbol{\omega}\)和偏置\(b\)决定，是特征空间\(\mathbb{R}^n\)中的一个超平面，\(\boldsymbol{\omega}\)是分类超平面的法向量，指向的区域是正类判别区域，\(b\)是超平面的截距。</span></span></span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">为了使用同一个学习算法学习权值向量\(\boldsymbol{\omega}\)和偏置\(b\)，</span></span><span data-wiz-span="data-wiz-span">通常将输入特征向量写作：\([~1,x_1,x_2,...,x_n~]^T\)，\( \boldsymbol{\omega}= [~b, \omega_1,\omega_2,...,\omega_n~]\)。于是感知器模型可以写作更紧凑的形式：\(f(\boldsymbol{x})=\text{sign}(\boldsymbol{\omega} \cdot \boldsymbol{x})\)。</span></span></span>
+	</div>
+
+	<div>
+		<p style="text-align: center; ">
+			<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><img border="0" src="http://www.lovecaoying.com/blog/wp-content/uploads/2013/12/wpid-e7e678bf0978a58e9f68c015a711dc81_443600ec-4973-4c98-be34-9cc28033476c1.png" /></span></span>
+		</p>
+
+		<p style="text-align: center; ">
+			<span style="font-family: 'times new roman', times, serif; font-size: 16px; ">图2 感知器模型</span>
+		</p>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">图2是单层感知器模型。感知器学习算法通过给定的训练样本集，学习连接权值\(\boldsymbol{\omega}\)。</span></span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div style="text-align: center; ">
+		<strong><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">2. 感知器学习算法以及收敛性</span></span></strong>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">感知器学习算法很简单。</span></span>
+	</div>
+
+	<div style="text-align: center; ">
+		<span style="font-size:14px;"><span style="font-family:times new roman,times,serif;">算法1. 感知器在线学习算法</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">输入：\(m\)个\(n+1\)维输入向量：\(\boldsymbol{x}_i=[~1,x_1,x_2,...x_n~]\)，\(i=1,2,...,m\)，类别标签\(\{ ~y_1,y_2,...,y_m~\}\)；学习率\(\eta \in [0,1]\)</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">初始化：\(\boldsymbol{\omega}=[~b,\omega_1,\omega_2,...,\omega_n~]=\boldsymbol{0}\)</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">&nbsp; &nbsp; &nbsp;（1）循环变量：\(t=1,2,3,...\)</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">&nbsp; &nbsp; &nbsp;（2）从训练样本集中选择样本\((\boldsymbol{x}_i,y_i)\)，\(\tilde{y}_i= \boldsymbol{\omega}_t \cdot \boldsymbol{x}_i\)</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">&nbsp; &nbsp; &nbsp;（3）更新权值向量：\( \boldsymbol{\omega}_{t+1} = \boldsymbol{\omega}_t + \eta ~(y_i-\tilde{y}_i)\boldsymbol{x}_i\)</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">&nbsp; &nbsp; &nbsp;（4）转至（1）直到训练样本集中没有错误分类的样本</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">可以证明当训练数据线性可分时，算法1收敛。若训练样本不可分，算法1不收敛。这时通过设置最大迭代次数防止算法陷入死循环。</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">算法1可以直观地解释为：若某个样本正确分类，权值向量不改变；若样本错误分类，调整权值向量\(\boldsymbol{\omega}\)使分类超平面向着错分类样本移动。算法每次只选择一个样本，是典型的在线学习算法（online learning）。</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">通过引入感知器损失函数，可以建立起批量感知器算法（Bath algorithm）。感知器损失函数：\(J(\boldsymbol{\omega})=\sum \limits_{x \in \mathfrak{X}} \left ( - ~ \boldsymbol{\omega}^T \cdot \boldsymbol{x} \right ) \)，集合\(\mathfrak{X}:~\{\boldsymbol{x}_i \left | &nbsp;\text{sign}(\boldsymbol{\omega} \cdot \boldsymbol{x}_i) \ne y_i \right. \}\)是在权值向量\(\boldsymbol{\omega}\)下错分类训练样本的集合，若集合\(\mathfrak{X}\)为空，损失为0。每一次权值向量的更新都选择令损失函数下降最快的方向，也就是损失函数的负梯度方向：\(- \nabla J(\boldsymbol{\omega}) = \sum \limits_{\boldsymbol{x} \in \mathfrak {X}} \boldsymbol{x} \)，于是：\(\boldsymbol{\omega}_{t+1}= \boldsymbol{\omega}_t +\eta \sum \limits_{\boldsymbol{x} \in \mathfrak{X}} \boldsymbol{x} &nbsp;\)。</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">上面的感知器模型使用McCulloch-Pitts神经元模型，激活函数是符号函数，也叫作硬限幅函数（hard limiter），如果将激活函数换做实值输出的sigmoid函数（也叫作软限幅函数，soft limiter）为感知器模型引入非线性，那么感知器分类的效果是否会更好？事实证明不论使用硬限幅，还是软限幅激活函数，感知器稳态和决策结果几乎都是相同的。可以说，只要使用的神经元模型是输入特征的线性组合紧接着一个非线性成分，不论使用什么样的非线性成分，这样的单层感知器都只能对线性可分数据进行分类。</span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">Minsky和Papert在那本有名的著作《Perceptron》中证明了感知器只能对线性可分数据进行分类的缺陷，并且指出这种缺陷在感知器的变种&mdash;&mdash;多层感知器网络中同样存在。</span></span><span style="font-family: 'times new roman', times, serif; font-size: 15.833333015441895px; ">在这之后，神经网络研究停滞了几乎十年，直到反向传播算法的提出。历史最终证明了，Minsky和Papert对神经网络这种过于悲观的论断是不公平的。</span><span style="font-family: 'times new roman', times, serif; font-size: 16px; ">（即使一直以来没有真正系统地学习神经网络理论，但是关于神经网络起起落落的这段历史却在人工智能，计算智能，模式识别这些课上一次又一次的提起，我想很多人都很熟悉。</span><span style="font-family: 'times new roman', times, serif; font-size: 16px; ">）</span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">Hinton教授的说法是感知器的这种局限性源自所选择的特征，如果选择了合适的特征感知器几乎可以做任何事情，从长远角度来看，学习问题的困难之处在于学习正确的特征。</span></span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span">Hinton教授在Coursera上的课程感觉讲得很基础，各种例子，没有太多形式化的证明。Lecture3中还提到了激活函数分别是线性函数和sigmoid函数时神经网络的训练方法。我想只要学过一些机器学习基本算法都会觉得很熟悉，就是回归和Logistic Regression学习算法嘛。</span></span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">参考文献：</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">[1]. 统计学习方法, 李航， 清华大学出版社， 2012， P25-36</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">[2]. Neural Networks and Learning Machines（影印版）, Simon Haykin, 机械工业出版社, 2012</span></span>
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">[3]. Hinton教授在Coursera上的课程《Neural Network for Machine Learning》，Lecture 2，地址请戳这<span data-wiz-span="data-wiz-span">里：</span><a href="https://class.coursera.org/neuralnets-2012-001/class/index">https://class.coursera.org/neuralnets-2012-001/class/index</a></span></span>
+	</div>
+
+	<div>
+		&nbsp;
+	</div>
+
+	<div>
+		<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><a href="http://www.wiz.cn/i/9aa7f471" title="来自为知笔记(Wiz)">来自为知笔记(Wiz)</a></span></span>
+	</div>
+</div>
+
+
+
+
+
+    </body>
+</html>
+

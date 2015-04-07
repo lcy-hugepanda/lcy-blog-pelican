@@ -1,12 +1,13 @@
 <html>
     <head>
-        <title>My super title</title>
-        <meta name="tags" content="thats, awesome" />
-        <meta name="date" content="2012-07-09 22:28" />
-        <meta name="modified" content="2012-07-10 20:14" />
-        <meta name="category" content="yeah" />
-        <meta name="authors" content="Alexis Métaireau, Conan Doyle" />
+        <title>卷积神经网络(1)——卷积运算</title>
+        <meta name="tags" content="Deep learning, CNN" />
+        <meta name="date" content="2014-07-18 22:28" />
+        <meta name="modified" content="2014-07-18 22:28" />
+        <meta name="category" content="Deep learning" />
+        <meta name="authors" content="LCY.Seso" />
         <meta name="summary" content="Short version for index and feeds" />
+		<meta name="Image" content="images/140718-feature.jpg" />
 		
 		<script type="text/javascript"
 			src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -16,8 +17,6 @@
 		<script type="text/javascript"
 		  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 		</script>
-	
-        This is the content of my super blog post.
 		
 		<p>
 			<span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span data-wiz-span="data-wiz-span"><span data-wiz-span="data-wiz-span">之前断断续续看了一些神经网络相关的内容，马上也要开始全新的阶段，以后还是不时会动动&ldquo;笔&rdquo;，不管简单还是复杂，写点儿东西。</span></span></span></span>
@@ -98,7 +97,7 @@
 			</div>
 
 			<div>
-				<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/lowpass-filter.jpg"><img alt="lowpass filter" class="alignnone size-medium wp-image-1054" height="104" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/lowpass-filter-300x104.jpg" width="300" /></a>
+				<a href="images/lowpass-filter.jpg"><img alt="lowpass filter" class="alignnone size-medium wp-image-1054" height="104" src="images/lowpass-filter.jpg" /></a>
 			</div>
 
 			<div>
@@ -111,7 +110,7 @@
 				</div>
 
 				<div>
-					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/highpass-filter.jpg"><img alt="highpass filter" class="alignnone size-medium wp-image-1053" height="104" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/highpass-filter-300x104.jpg" width="300" /></a>
+					<a href="images/highpass-filter.jpg"><img alt="highpass filter" class="alignnone size-medium wp-image-1053" height="104" src="images/highpass-filter.jpg" /></a>
 				</div>
 
 				<div>
@@ -128,7 +127,7 @@
 			</div>
 
 			<div>
-				<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/3.jpg"><img alt="3" class="alignnone size-medium wp-image-1055" height="104" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/3-300x104.jpg" width="300" /></a>
+				<a href="images/140718_3.jpg"><img alt="3" class="alignnone size-medium wp-image-1055" height="104" src="images/140718_3.jpg" /></a>
 			</div>
 
 			<div>
@@ -141,7 +140,7 @@
 
 			<div>
 				<div>
-					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/4.jpg"><img alt="4" class="alignnone size-medium wp-image-1056" height="128" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/4-300x128.jpg" width="300" /></a>
+					<a href="images/140718_4.jpg"><img alt="4" class="alignnone size-medium wp-image-1056" height="128" src="images/140718_4.jpg" /></a>
 				</div>
 
 				<div>
@@ -157,7 +156,7 @@
 				</div>
 
 				<div>
-					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/5.jpg"><img alt="5" class="alignnone size-medium wp-image-1057" height="80" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/5-300x80.jpg" width="300" /></a>
+					<a href="images/140718_5.jpg"><img alt="5" class="alignnone size-medium wp-image-1057" height="80" src="images/140718_5.jpg" /></a>
 				</div>
 
 				<div>
@@ -184,14 +183,11 @@
 					<span style="font-family: 'times new roman', times, serif; font-size: 16px; line-height: 1.6em;">下图各个子图从上到下，从左到右分别是，原图，原图与滤波模板\(k_1\)至\(k_8\)卷积的结果。</span>
 				</p>
 
-				<p>
-					&nbsp;
-				</p>
 			</div>
 
 			<div>
 				<p>
-					<a href="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/6.jpg"><img alt="6" class="alignnone size-medium wp-image-1058" height="243" src="http://www.lovecaoying.com/blog/wp-content/uploads/2014/07/6-300x243.jpg" width="300" /></a>
+					<a href="images/140718_6.jpg"><img alt="6" class="alignnone size-medium wp-image-1058" height="243" src="images/140718_6.jpg" /></a>
 				</p>
 
 				<p>
