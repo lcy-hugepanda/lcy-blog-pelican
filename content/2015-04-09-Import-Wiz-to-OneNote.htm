@@ -1,0 +1,853 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+        <title>为知笔记到OneNote的迁移</title>
+        <meta name="tags" content="OneNote, Wiz" />
+        <meta name="date" content="2015-4-9 10:34" />
+        <meta name="modified" content="2015-4-9 10:34" />
+        <meta name="category" content="Tool" />
+        <meta name="authors" content="LCY.Hugepanda" />
+        <meta name="summary" content="Short version for index and feeds" />
+		<meta name='image' content='images/140409-feature.png'>
+
+<meta http-equiv=Content-Type content="text/html; charset=unicode">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="2015-04-09-Import-Wiz-to-OneNote-files/filelist.xml">
+<link rel=Edit-Time-Data
+href="2015-04-09-Import-Wiz-to-OneNote-files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>aureole</o:Author>
+  <o:LastAuthor>aureole</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2015-04-09T02:31:00Z</o:Created>
+  <o:LastSaved>2015-04-09T02:31:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>185</o:Words>
+  <o:Characters>1055</o:Characters>
+  <o:Lines>8</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1238</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="2015-04-09-Import-Wiz-to-OneNote-files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="2015-04-09-Import-Wiz-to-OneNote-files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+@font-face
+	{font-family:"Linux Libertine";
+	panose-1:2 0 5 3 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-536868097 1375790587 33554464 0 447 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-priority:99;
+	mso-style-link:"页眉 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	border:none;
+	mso-border-bottom-alt:solid windowtext .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:9.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:"页脚 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.Char
+	{mso-style-name:"批注框文本 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:批注框文本;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:宋体;
+	mso-ascii-font-family:宋体;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.Char0
+	{mso-style-name:"页眉 Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页眉;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:宋体;
+	mso-ascii-font-family:宋体;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.Char1
+	{mso-style-name:"页脚 Char";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页脚;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;
+	font-family:宋体;
+	mso-ascii-font-family:宋体;
+	mso-fareast-font-family:宋体;
+	mso-hansi-font-family:宋体;
+	mso-bidi-font-family:宋体;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:10.0pt;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	mso-ascii-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-font-kerning:0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;
+	mso-footnote-separator:url("2015-04-09-Import-Wiz-to-OneNote-files/header.htm") fs;
+	mso-footnote-continuation-separator:url("2015-04-09-Import-Wiz-to-OneNote-files/header.htm") fcs;
+	mso-endnote-separator:url("2015-04-09-Import-Wiz-to-OneNote-files/header.htm") es;
+	mso-endnote-continuation-separator:url("2015-04-09-Import-Wiz-to-OneNote-files/header.htm") ecs;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt'>
+
+<div class=WordSection1>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:20.0pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>为知笔记到</span><span
+lang=EN-US style='font-size:20.0pt;font-family:"Calibri","sans-serif";
+mso-bidi-font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='font-size:20.0pt;mso-bidi-font-family:"Linux Libertine";color:black'>的迁移以及</span><span
+lang=EN-US style='font-size:20.0pt;font-family:"Calibri","sans-serif";
+mso-bidi-font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='font-size:20.0pt;mso-bidi-font-family:"Linux Libertine";color:black'>发布静态博客</span><span
+lang=EN-US style='font-size:20.0pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+9.0pt;font-family:"Calibri","sans-serif";mso-bidi-font-family:"Linux Libertine";
+color:gray'>2015</span><span style='font-size:9.0pt;mso-bidi-font-family:"Linux Libertine";
+color:gray'>年</span><span lang=EN-US style='font-size:9.0pt;font-family:"Calibri","sans-serif";
+mso-bidi-font-family:"Linux Libertine";color:gray'>4</span><span
+style='font-size:9.0pt;mso-bidi-font-family:"Linux Libertine";color:gray'>月</span><span
+lang=EN-US style='font-size:9.0pt;font-family:"Calibri","sans-serif";
+mso-bidi-font-family:"Linux Libertine";color:gray'>9</span><span
+style='font-size:9.0pt;mso-bidi-font-family:"Linux Libertine";color:gray'>日</span><span
+lang=EN-US style='font-size:9.0pt;font-family:"Linux Libertine";color:gray'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+9.0pt;font-family:"Calibri","sans-serif";mso-bidi-font-family:"Linux Libertine";
+color:gray'>9:53<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>不吹不黑，为知笔记其实是一个相当不错的笔记软件，尤其是对于</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Markdown</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>和</span><span
+class=SpellE><span lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";
+color:black'>mathjax</span></span><span style='font-size:10.5pt;mso-bidi-font-family:
+"Linux Libertine";color:black'>之类的支持，在其他的笔记软件中较为少见。但是，为知笔记始终有几个难以突破的问题：</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>（</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>1</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>）非</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>PC</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>端客户端实在有点丑</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>（</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>2</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>）多次修改笔记后，后台的</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>html</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>格式会变得很乱</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>（</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>3</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>）在日常工作和交流文件依然固定在</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>office</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>系列的情况下，为知笔记的内容难以直接转化</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>于是，借着</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>免费的时机，将笔记系统转移到</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>，以下记录迁移过程。</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.5pt;font-family:"Linux Libertine";color:black'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>首先，需要做如下准备：<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.5pt;font-family:"Linux Libertine";color:black'>1</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>、安装一个</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Evernote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>，申请一个账号</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.5pt;font-family:"Linux Libertine";color:black'>2</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>、安装</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>OneNote
+2013</span><span style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";
+color:black'>，地址：</span><span lang=EN-US style='font-size:10.5pt;font-family:
+"Linux Libertine";color:black'>http://www.onenote.com/Download<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.5pt;font-family:"Linux Libertine";color:black'>3</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>、下载工具软件</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Evernote2Onenote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>，地址：</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>http://stefanstools.sourceforge.net/Evernote2Onenote.html<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>安装</span><span lang=EN-US
+style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Evernote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>的原因是为知笔记的导出内容似乎并不能直接导入</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>OneNote,</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>因此采用</span><span
+class=SpellE><span lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";
+color:black'>EverNote</span></span><span style='font-size:10.5pt;mso-bidi-font-family:
+"Linux Libertine";color:black'>作为中转。</span><span lang=EN-US style='font-size:
+10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-size:
+10.5pt;font-family:"Linux Libertine";color:black'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>然后，在为知笔记中选择需要导出的文件夹，在菜单中选择文件</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>-&gt;</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>导出文件</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>-&gt;</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>导出</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>HTML</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>：</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black;mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="图片_x0020_1" o:spid="_x0000_i1029" type="#_x0000_t75"
+ alt="计算机生成了可选文字:&#10;X &#10;瓣 談 よ &#10;; ( 0 ) 贓 &#10;( H ) &#10;(A) &#10;( X ) 引 &#10;( 1 ) 呱 &#10;( 亠 ) せ 材 &#10;N + &#10;新 曾 。 u 、 い el 聊 ) 希 u 24 。 V 畍 &#10;; 240u 」 2 》 Ⅲ 、 畍 &#10;の 閏 回 嫐 &#10;- : イ ) 叩 聰 &#10;; 2 ) 竪 &#10;( N ) 2 一 贐 &#10;; AHD = 冊 &#10;; せ 鬆 V 畍 &#10;せ 材 引 畍 &#10;胆 冊 &#10;糾 名 、 &#10;ー Z 5 仁 0 q 羅 &#10;; 鬆 蠶 引 畍 &#10;WIGNIHFÉ &#10;町 朕 せ 鬆 &#10;; 主 GN 引 畍 "
+ style='width:196.5pt;height:111pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="2015-04-09-Import-Wiz-to-OneNote-files/image001.png" o:title=" イ ) 叩 聰 &#10;; 2 ) 竪 &#10;( N ) 2 一 贐 &#10;; AHD = 冊 &#10;; せ 鬆 V 畍 &#10;せ 材 引 畍 &#10;胆 冊 &#10;糾 名 、 &#10;ー Z 5 仁 0 q 羅 &#10;; 鬆 蠶 引 畍 &#10;WIGNIHFÉ &#10;町 朕 せ 鬆 &#10;; 主 GN 引 畍 "/>
+</v:shape><![endif]--><![if !vml]><img src="2015-04-09-Import-Wiz-to-OneNote-files/image001.png"
+alt="计算机生成了可选文字:&#10;X &#10;瓣 談 よ &#10;; ( 0 ) 贓 &#10;( H ) &#10;(A) &#10;( X ) 引 &#10;( 1 ) 呱 &#10;( 亠 ) せ 材 &#10;N + &#10;新 曾 。 u 、 い el 聊 ) 希 u 24 。 V 畍 &#10;; 240u 」 2 》 Ⅲ 、 畍 &#10;の 閏 回 嫐 &#10;- : イ ) 叩 聰 &#10;; 2 ) 竪 &#10;( N ) 2 一 贐 &#10;; AHD = 冊 &#10;; せ 鬆 V 畍 &#10;せ 材 引 畍 &#10;胆 冊 &#10;糾 名 、 &#10;ー Z 5 仁 0 q 羅 &#10;; 鬆 蠶 引 畍 &#10;WIGNIHFÉ &#10;町 朕 せ 鬆 &#10;; 主 GN 引 畍 "
+v:shapes="图片_x0020_1"><![endif]></span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>需要注意的是，导出的编码记得改成</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>UTF-8</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>：</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_2" o:spid="_x0000_i1028" type="#_x0000_t75" alt="计算机生成了可选文字:&#10;V-EHTML &#10;当 前 文 件 夹 &#10;聒 动 和 社 交 &#10;导 出 到 &#10;D:ÅweizhioutÅ &#10;套 用 模 板 &#10;囗 使 用 SEO 年 为 文 件 名 &#10;囗 Renderpvlarkdown &#10;字 符 蘖 &#10;[ 〔 〔 二 〕 匚 二 彐 "
+ style='width:167.25pt;height:85.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="2015-04-09-Import-Wiz-to-OneNote-files/image003.png" o:title="ÅweizhioutÅ &#10;套 用 模 板 &#10;囗 使 用 SEO 年 为 文 件 名 &#10;囗 Renderpvlarkdown &#10;字 符 蘖 &#10;[ 〔 〔 二 〕 匚 二 彐 "/>
+</v:shape><![endif]--><![if !vml]><img src="2015-04-09-Import-Wiz-to-OneNote-files/image003.png"
+alt="计算机生成了可选文字:&#10;V-EHTML &#10;当 前 文 件 夹 &#10;聒 动 和 社 交 &#10;导 出 到 &#10;D:ÅweizhioutÅ &#10;套 用 模 板 &#10;囗 使 用 SEO 年 为 文 件 名 &#10;囗 Renderpvlarkdown &#10;字 符 蘖 &#10;[ 〔 〔 二 〕 匚 二 彐 "
+v:shapes="图片_x0020_2"><![endif]></span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>导出后，打开并登陆</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Evernote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>，建立一个笔记本，之后在菜单中选择工具</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>-&gt;</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>导入文件夹：</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_3" o:spid="_x0000_i1027" type="#_x0000_t75" alt="计算机生成了可选文字:&#10;格 式 〔 0 &#10;同 步 &#10;和 &#10;工 具 (T) 帮 勛 〔 H 〕 &#10;同 步 &#10;远 顶 〔 0 &#10;帐 户 信 巨 (A) &#10;导 入 文 # 夷 (I) 一 &#10;§ 定 叟 工 具 样 (T) ． ． "
+ style='width:137.25pt;height:87.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="2015-04-09-Import-Wiz-to-OneNote-files/image005.png" o:title="&#10;格 式 〔 0 &#10;同 步 &#10;和 &#10;工 具 (T) 帮 勛 〔 H 〕 &#10;同 步 &#10;远 顶 〔 0 &#10;帐 户 信 巨 (A) &#10;导 入 文 # 夷 (I) 一 &#10;§ 定 叟 工 具 样 (T) ． ． "/>
+</v:shape><![endif]--><![if !vml]><img src="2015-04-09-Import-Wiz-to-OneNote-files/image005.png"
+alt="计算机生成了可选文字:&#10;格 式 〔 0 &#10;同 步 &#10;和 &#10;工 具 (T) 帮 勛 〔 H 〕 &#10;同 步 &#10;远 顶 〔 0 &#10;帐 户 信 巨 (A) &#10;导 入 文 # 夷 (I) 一 &#10;§ 定 叟 工 具 样 (T) ． ． "
+v:shapes="图片_x0020_3"><![endif]></span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='font-size:10.5pt;
+mso-bidi-font-family:"Linux Libertine";color:black'>导入完成后，打开</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Evernote2Onenote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>工具，选择刚才建立的</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>Evernote</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>笔记本，</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'>import</span><span
+style='font-size:10.5pt;mso-bidi-font-family:"Linux Libertine";color:black'>即可</span><span
+lang=EN-US style='font-size:10.5pt;font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_4" o:spid="_x0000_i1026" type="#_x0000_t75" alt="计算机生成了可选文字:&#10;Ever note20nenote &#10;import notes "
+ style='width:246.75pt;height:72.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="2015-04-09-Import-Wiz-to-OneNote-files/image007.png" o:title="&#10;Ever note20nenote &#10;import notes "/>
+</v:shape><![endif]--><![if !vml]><img src="2015-04-09-Import-Wiz-to-OneNote-files/image007.png"
+alt="计算机生成了可选文字:&#10;Ever note20nenote &#10;import notes " v:shapes="图片_x0020_4"><![endif]></span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>请注意，在</span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>import</span><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>之前一定要关闭</span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>OneNote</span><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>，另外，导入的过程可能在个别文章会出错，这些文章手动导入就行了（<span
+class=GramE>直接全选粘贴</span>到</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>OneNote</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>就可以）</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>既然写到了这里，大概简介一下</span><span lang=EN-US
+style='font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>的特点吧：</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>1</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>、为知笔记是基于</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>html</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>的，每一个笔记都是一个</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>html</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>，所以在编写笔记的时候，有很明显的“网页”感。内容的组织方面，也是线性的顺序，和一般的文章类似。而</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>中并没有任何空间上的限制，各种内容像</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>PPT</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>那样随意排列。可以认为，</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>的每一个笔记页，都是一页可以无限延展的涂鸦本，通过放大缩小可以容纳任意扩展的内容。从这一点上看，</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>更像一个没有格子的传统笔记本，或者一张空白的可缩放的</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>A4</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>纸，更加适合不拘一格的笔记形式。</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>2</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>、</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>OneNote</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>的组织方式有三个层次：笔记本、分区和页面，其自带的示意图非常好懂：</span><span lang=EN-US
+style='font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black;mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="图片_x0020_5" o:spid="_x0000_i1025" type="#_x0000_t75" alt="计算机生成了可选文字:&#10;笔 记 本 &#10;OneNote &#10;笔 记 本 的 伤 眍 &#10;历 史 &#10;、 生 &#10;分 区 中 的 页 "
+ style='width:328.5pt;height:254.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="2015-04-09-Import-Wiz-to-OneNote-files/image009.png" o:title="&#10;笔 记 本 &#10;OneNote &#10;笔 记 本 的 伤 眍 &#10;历 史 &#10;、 生 &#10;分 区 中 的 页 "/>
+</v:shape><![endif]--><![if !vml]><img src="2015-04-09-Import-Wiz-to-OneNote-files/image009.png"
+alt="计算机生成了可选文字:&#10;笔 记 本 &#10;OneNote &#10;笔 记 本 的 伤 眍 &#10;历 史 &#10;、 生 &#10;分 区 中 的 页 "
+v:shapes="图片_x0020_5"><![endif]></span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>3</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>、</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>OneNote</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>的内容与</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>Office</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>系的其他软件兼容性当然是很好的，可以直接转成</span><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>doc</span><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>文档。虽然不那么喜欢</span><span lang=EN-US
+style='font-family:"Linux Libertine";color:black'>office</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>系，但是不得不承认的是，日常活动中还是没法完全离开</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>office</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>唉。</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>最后，简要介绍一下如何使用</span><span lang=EN-US
+style='font-family:"Linux Libertine";color:black'>OneNote</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>发布静态博客（这一篇就是这样发布的），使用的是</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'>pelican</span><span
+style='mso-bidi-font-family:"Linux Libertine";color:black'>。</span><span
+lang=EN-US style='font-family:"Linux Libertine";color:black'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span style='mso-bidi-font-family:
+"Linux Libertine";color:black'>其实过程非常简单：<span lang=EN-US><o:p></o:p></span></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>1</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>、</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>OneNote</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>另存为</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>doc<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>2</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>、</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>doc</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>另存为</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>html<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt'><span lang=EN-US style='font-family:
+"Linux Libertine";color:black'>3</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>、</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'>html</span><span style='mso-bidi-font-family:"Linux Libertine";
+color:black'>加入元信息，修正图片链接（自动生成的图片包括一个大图和一个小图，默认是显示小图的，比较模糊，需要手工改一下html源码）</span><span lang=EN-US style='font-family:"Linux Libertine";
+color:black'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

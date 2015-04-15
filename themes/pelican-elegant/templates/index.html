@@ -55,7 +55,7 @@
         {% endif %}
         <div class="{{css_class}}">
             <header>
-            <h1 id="about-me">About me</h1>
+            <h1 id="about-me">About us</h1>
             </header>
             <div class="article-content">
                 {{ LANDING_PAGE_ABOUT.details }}
@@ -70,7 +70,7 @@
         {% endif %}
         <div class="{{css_class}}">
             <header>
-            <h1 id="my-projects">My Projects</h1>
+            <h1 id="my-projects">Our Projects</h1>
             </header>
             {% for project in PROJECTS %}
             <ul class="list-all-articles">
@@ -103,7 +103,7 @@
 				{% endif %}
                 <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a>
                 <section>
-                    posted in
+                    {{ article.author }}posted in
                 <a href="{{ SITEURL }}/categories.html#{{ article.category.slug }}-ref">{{ article.category }}</a>
                 <div class="recent-posts-time">
                 <time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
