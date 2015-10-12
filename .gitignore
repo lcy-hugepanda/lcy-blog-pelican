@@ -61,3 +61,6 @@ target/
 
 # Pelican output
 output/
+
+# Main page
+main_page/
